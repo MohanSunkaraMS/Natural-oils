@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { products } from "../../data/products";
+import { useProducts } from "../../hooks/useProducts";
 import { useCart } from "../../context/CartContext";
 
 const tabs = [
@@ -9,6 +9,7 @@ const tabs = [
 ];
 
 export default function ProductsMenu() {
+    const { products, loading, error } = useProducts();
     const [activeTab, setActiveTab] = useState("oils");
     const { addToCart, items, updateQuantity } = useCart();
 
@@ -102,6 +103,9 @@ export default function ProductsMenu() {
                 </div>
             </div>
 
+            {loading && <div style={{ textAlign: 'center', padding: '40px', color: '#7a5c3a' }}>Loading our products...</div>}
+            {error && <div style={{ textAlign: 'center', padding: '40px', color: '#ef4444' }}>Error loading products. Please try again.</div>}
+
             {/* Products grid */}
             <div
                 style={{
@@ -112,7 +116,7 @@ export default function ProductsMenu() {
                     margin: "0 auto",
                 }}
             >
-                {products[activeTab].map((p) => (
+                {!loading && !error && products[activeTab]?.map((p) => (
                     <div
                         key={p.name}
                         style={{

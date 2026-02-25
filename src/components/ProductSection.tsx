@@ -41,7 +41,8 @@ const ProductSection: React.FC<ProductProps> = ({ id, title, items, image, price
                             <strong>General Pricing:</strong> {priceRange}
                             <p style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}>* Contact us for specific product prices.</p>
                         </div>
-                        <a href="https://wa.me/9492603481" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                        <a href="https://wa.me/919440404469
+" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                             Order on WhatsApp
                         </a>
                     </div>

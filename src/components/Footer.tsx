@@ -31,7 +31,8 @@ const Footer: React.FC = () => {
                     </div>
                     <div>
                         <h4 style={{ color: 'var(--white)', marginBottom: '1rem' }}>Contact Us</h4>
-                        <p style={{ opacity: 0.8, marginBottom: '0.5rem' }}>Phone: +91 9492603481</p>
+                        <p style={{ opacity: 0.8, marginBottom: '0.5rem' }}>Phone: +919440404469
+                        </p>
                         <p style={{ opacity: 0.8, marginBottom: '1rem' }}>WhatsApp: 9492603481</p>
                         <a href="https://wa.me/9492603481" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                             Message on WhatsApp

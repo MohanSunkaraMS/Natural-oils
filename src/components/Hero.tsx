@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
                 </p>
                 <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
                     <a href="#oils" className="btn btn-secondary">Explore Products</a>
-                    <a href="https://wa.me/9492603481" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                    <a href="https://wa.me/919440404469" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                         WhatsApp Us
                     </a>
                 </div>

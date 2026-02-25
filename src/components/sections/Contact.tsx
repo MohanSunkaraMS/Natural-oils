@@ -99,7 +99,7 @@ export default function Contact() {
                             fontFamily: "'Lato', sans-serif",
                         }}
                     >
-                        +91 94926 03481
+                        +91 94404 04469
                     </span>
                     <p
                         style={{

@@ -31,6 +31,6 @@ export const products: Record<string, Product[]> = {
     ],
 };
 
-export const WHATSAPP_NUMBER = "919492603481";
+export const WHATSAPP_NUMBER = "919440404469";
 
 export const NAV_ITEMS = ["Home", "Products", "About", "Contact"];

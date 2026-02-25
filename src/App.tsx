@@ -50,7 +50,7 @@ export default function App() {
 
   return (
     <CartProvider>
-      <AnnouncementBar />
+      {/* <AnnouncementBar /> */}
       <Navbar />
 
       <main>

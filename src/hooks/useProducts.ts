@@ -18,12 +18,15 @@ export function useProducts() {
             const groupedProducts: Record<string, Product[]> = {
                 oils: [],
                 ghees: [],
-                pickles: []
+                pickles: [],
+                powders: []
             };
 
             snapshot.forEach((doc) => {
                 const data = doc.data();
-                const category = data.category || 'oils';
+                // Normalize category: lowercase and trim
+                const category = (data.category || 'oils').toLowerCase().trim();
+
                 if (!groupedProducts[category]) {
                     groupedProducts[category] = [];
                 }

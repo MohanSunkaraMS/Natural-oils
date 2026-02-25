@@ -1,17 +1,23 @@
 import { useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
 import { useCart } from "../../context/CartContext";
+import { products as staticProducts } from "../../data/products";
 
 const tabs = [
     { id: "oils", label: "🫙 Oils" },
     { id: "ghees", label: "🥛 Ghees" },
     { id: "pickles", label: "🌶 Pickles" },
+    { id: "powders", label: "✨ Powders" },
 ];
 
 export default function ProductsMenu() {
     const { products, loading, error } = useProducts();
     const [activeTab, setActiveTab] = useState("oils");
     const { addToCart, items, updateQuantity } = useCart();
+
+    const categoryProducts = products[activeTab] || [];
+    const staticCategoryProducts = staticProducts[activeTab] || [];
+    const displayedProducts = (categoryProducts.length > 0) ? categoryProducts : staticCategoryProducts;
 
     const getItemQuantity = (name: string) => {
         return items.find(i => i.name === name)?.quantity || 0;
@@ -116,7 +122,7 @@ export default function ProductsMenu() {
                     margin: "0 auto",
                 }}
             >
-                {!loading && !error && products[activeTab]?.map((p) => (
+                {!loading && !error && displayedProducts.map((p) => (
                     <div
                         key={p.name}
                         style={{

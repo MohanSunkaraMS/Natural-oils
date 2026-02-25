@@ -89,6 +89,7 @@ export default function AdminDashboard() {
                         <option value="oils">Oils</option>
                         <option value="ghees">Ghees</option>
                         <option value="pickles">Pickles</option>
+                        <option value="powders">Powders</option>
                     </select>
                     <textarea placeholder="Description" value={newProduct.desc} onChange={e => setNewProduct({ ...newProduct, desc: e.target.value })} style={{ gridColumn: '1 / -1', padding: '8px', borderRadius: '4px', border: '1px solid #d1d5db' }} />
                     <button type="submit" disabled={seeding} style={{ gridColumn: '1 / -1', background: '#4a7c59', color: '#fff', border: 'none', padding: '12px', borderRadius: '6px', cursor: 'pointer', fontWeight: 700 }}>{seeding ? 'Processing...' : 'Add Product'}</button>
@@ -119,10 +120,21 @@ export default function AdminDashboard() {
                             {items.map((p: any) => (
                                 <div key={p.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px', background: '#fff', borderRadius: '8px', border: '1px solid #f0e6d6' }}>
                                     <div>
+                                        <span style={{ fontSize: '0.6rem', background: '#f0e6d6', padding: '2px 6px', borderRadius: '4px', marginRight: '8px', textTransform: 'uppercase' }}>{category}</span>
                                         <strong>{p.emoji} {p.name}</strong> - {p.price}
                                         <div style={{ fontSize: '0.85rem', color: '#9a7a5a' }}>{p.desc}</div>
                                     </div>
                                     <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                                        <select
+                                            value={category}
+                                            onChange={(e) => handleUpdate(p.id, { category: e.target.value })}
+                                            style={{ fontSize: '0.75rem', padding: '4px', borderRadius: '4px', border: '1px solid #d1d5db' }}
+                                        >
+                                            <option value="oils">Oils</option>
+                                            <option value="ghees">Ghees</option>
+                                            <option value="pickles">Pickles</option>
+                                            <option value="powders">Powders</option>
+                                        </select>
                                         <button
                                             onClick={() => handleUpdate(p.id, { inStock: !p.inStock })}
                                             style={{

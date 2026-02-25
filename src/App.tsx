@@ -8,7 +8,7 @@ import ProductsMenu from "./components/sections/ProductsMenu";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
 
-import AnnouncementBar from "./components/AnnouncementBar";
+
 import Testimonials from "./components/sections/Testimonials";
 import { CartProvider } from "./context/CartContext";
 import CartDrawer from "./components/CartDrawer";
